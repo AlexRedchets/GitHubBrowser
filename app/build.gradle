@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.alexredchets.githubbrowser"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", "\"https://api.github.com/\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    final retrofitVersion = '2.6.0'
+    final okhttpVersion = '3.12.1'
+    final coroutineVersion = '1.3.0-M1'
+    final lifecycleProviders = '1.1.1'
+    final coroutinesAdapterVersion = '0.9.2'
+    final glideVersion = '4.9.0'
+    final koinVersion = '2.0.1'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation "com.google.android.material:material:1.1.0-alpha10"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    implementation "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutineVersion}"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${coroutinesAdapterVersion}"
+
+    // Lifecycle providers
+    implementation "android.arch.lifecycle:runtime:${lifecycleProviders}"
+    implementation "android.arch.lifecycle:extensions:${lifecycleProviders}"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:${glideVersion}"
+
+    // Koin
+    implementation "org.koin:koin-android:${koinVersion}"
+}

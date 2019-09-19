@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GitHubBrowser</string>
+    <string name="search">Search</string>
+    <string name="enter_a_github_user_id">Enter a github user id</string>
+    <string name="last_updated">Last Updated</string>
+    <string name="stars">Stars</string>
+    <string name="forks">Forks</string>
+    <string name="network_error">There is a problem connecting to server. Please check your internet connection or try again later.</string>
+    <string name="profile_error">User not found.</string>
+</resources>
