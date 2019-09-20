@@ -1,8 +1,8 @@
 package com.alexredchets.githubbrowser.main
 
 data class User(
-    val name: String = "",
-    val avatar_url: String = ""
+    var name: String = "",
+    var avatar_url: String = ""
 )
 
 data class Repo(val forks: String,
