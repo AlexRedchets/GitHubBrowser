@@ -16,7 +16,6 @@ import org.junit.Assert.assertEquals
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 
-
 @RunWith(JUnit4::class)
 class AppTest {
 
@@ -68,6 +67,6 @@ class AppTest {
         mainViewModel.getRepos().observeOnce {
             assertEquals(it.size, 30)
         }
-    }
 
+    }
 }
